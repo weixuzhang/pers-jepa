@@ -1,0 +1,32 @@
+# Python caches and local tooling
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments and local env files
+.venv/
+venv/
+env/
+.env
+.env.*
+!.env.example
+
+# Data, runs, and model artifacts
+/data
+!scripts/data/
+/runs
+/outputs/
+/checkpoints/
+/tables/
+/logs/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.bin
+
+# OS/editor noise
+.DS_Store

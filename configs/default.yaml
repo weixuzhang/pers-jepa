@@ -1,0 +1,40 @@
+model:
+  name: Qwen/Qwen2.5-1.5B
+  layer: -1
+  pred_token: "[PRED]"
+  predictor_tokens: 1
+  max_length: 1024
+  dtype: auto
+  device: auto
+
+sae:
+  input_dim: null
+  latent_dim: 128
+  top_k: 16
+  l1_coeff: 0.0001
+  decoder_bias: true
+
+training:
+  batch_size: 256
+  epochs: 50
+  vanilla_lr: 0.001
+  jepa_lr: 0.0003
+  weight_decay: 0.0
+  objective: jepa_direct
+  lambda_coeff: 1.0
+  stp_coeff: 0.25
+  seed: 42
+  grad_clip_norm: 1.0
+  eval_fraction: 0.05
+
+stp:
+  enabled: false
+  num_points: 4
+  detach_target: true
+
+data:
+  profile_template: "{profile}\n\nTask: {prompt}"
+  text_field: prompt
+  profile_field: profile
+  target_field: target
+  id_field: id

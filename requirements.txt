@@ -1,0 +1,13 @@
+torch>=2.4
+transformers>=5.0
+datasets>=2.21
+huggingface_hub
+accelerate
+peft>=0.10
+safetensors
+numpy
+scipy
+scikit-learn
+pyyaml
+tqdm
+openai

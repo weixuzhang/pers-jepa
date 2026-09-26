@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "persjepa"
+version = "0.2.0"
+description = "Pers-JEPA: profile-free personalization with user-routed JEPA-SAE residual predictors"
+requires-python = ">=3.10"
+dependencies = [
+  "torch>=2.4",
+  "transformers>=5.0",
+  "datasets>=2.21",
+  "huggingface_hub",
+  "accelerate",
+  "peft>=0.10",
+  "safetensors",
+  "numpy",
+  "scipy",
+  "scikit-learn",
+  "pyyaml",
+  "tqdm",
+]
+
+[project.optional-dependencies]
+judge = ["openai"]
+
+[tool.setuptools.packages.find]
+include = ["persjepa*"]
